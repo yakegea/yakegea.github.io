@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="DvYvopKyy2XeM3XeGHSq0Vq5byC57qVXIRT7ggK1tsw" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yakegea Giriş Sistemi</title>
+    <link rel="stylesheet" href="https://mebbis.meb.gov.tr/cssyeni/bootstrapyeni.min.css">
+    <!-- En güncel Font Awesome CDN linki -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM7q5vv03NwW8pL17q4U8ZmbgK5eC1m8fA1qJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://mebbis.meb.gov.tr/cssyeni/iofrm-style.css">
+    <link rel="stylesheet" href="https://mebbis.meb.gov.tr/cssyeni/iofrm-theme9.css">
+    <link rel="stylesheet" href="https://mebbis.meb.gov.tr/cssyeni/jquery.mmenu.all.css">
+    <link rel="stylesheet" href="https://mebbis.meb.gov.tr/cssyeni/loginstyle.css?v=1.0">
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="img-holder">
+                <div class="info-holder">
+                    <h3>Yakegea Giriş Sistemi</h3>
+                    <p>Yakegea Giriş Sistemi ile Hey Türkiye'nin projelerine anında ulaşabilirsiniz.</p>
+                    <img src="logo-beyaz.png" alt="Giriş sistemi resmi" class="img-fluid" />
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div class="page-links">
+                            <img src="logo-beyaz.png" alt="logo" class="img-fluid" />
+                        </div>
+                        <form method="post" action="javascript:void(0);" id="ctl00" class="form-">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="txtKullaniciAdIcon"><i class="fas fa-user" aria-hidden="true"></i></span>
+                                </div>
+                                <input name="txtKullaniciAd" type="text" maxlength="20" id="txtKullaniciAd" class="form-control" placeholder="Sistem adını giriniz." required />
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="txtSifreIcon"><i class="fas fa-lock" aria-hidden="true"></i></span>
+                                </div>
+                                <input name="txtSifre" type="password" id="txtSifre" class="form-control" placeholder="Sistem Şifresini giriniz." required />
+                            </div>
+                            <div class="form-button">
+                                <input type="submit" name="btnGiris" value="Giriş" id="btnGiris" class="ibtn float-right text-center btnSubmit" style="width: 50%" />
+                                <a id="edevletlink" class="ibtn float-left text-center" href="#" style="padding: 6px 10px">Sayfayı Yenile</a>
+                                <div class="SifremiUnuttum">
+                                    <a href="#" id="sifrehatirlatlink" class="pull-right text-white">Şifremi Unuttum?</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#ctl00').on('submit', function() {
+                var kullaniciAd = $('#txtKullaniciAd').val();
+                var sifre = $('#txtSifre').val();
+                if (kullaniciAd === '58' && sifre === '58') {
+                    window.location.href = 'https://heyturkiye204.github.io/sistem/index.html'; // Yönlendirme URL'si
+                } else {
+                    alert('Kullanıcı adı veya şifre hatalı!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
