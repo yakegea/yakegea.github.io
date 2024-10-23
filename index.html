@@ -64,17 +64,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
+         $(document).ready(function() {
             $('#ctl00').on('submit', function() {
                 var kullaniciAd = $('#txtKullaniciAd').val();
                 var sifre = $('#txtSifre').val();
-                if (kullaniciAd === '58' && sifre === '58') {
-                    window.location.href = 'https://heyturkiye204.github.io/sistem/index.html'; // Yönlendirme URL'si
+                if (kullaniciAd === 'ai' && sifre === 'ai') {
+                    window.location.href = 'https://os.is-a.dev/ai/2024/'; // Yönlendirme URL'si
+                }
+                if (kullaniciAd === 'text' && sifre === 'text') {
+                    window.location.href = '#'; // Yönlendirme URL'si
                 } else {
                     alert('Kullanıcı adı veya şifre hatalı!');
                 }
             });
-        });
+        });       
     </script>
 </body>
 </html>
