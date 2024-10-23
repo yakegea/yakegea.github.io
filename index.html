@@ -2,7 +2,6 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="DvYvopKyy2XeM3XeGHSq0Vq5byC57qVXIRT7ggK1tsw" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yakegea Giriş Sistemi</title>
     <link rel="stylesheet" href="https://mebbis.meb.gov.tr/cssyeni/bootstrapyeni.min.css">
@@ -15,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <style>
         body {
-    font-family: 'Montserrat', sans-serif; /* Varsayılan font Montserrat */
+            font-family: 'Montserrat', sans-serif; /* Varsayılan font Montserrat */
         }
     </style>
 </head>
@@ -64,22 +63,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-         $(document).ready(function() {
+        $(document).ready(function() {
             $('#ctl00').on('submit', function() {
                 var kullaniciAd = $('#txtKullaniciAd').val();
                 var sifre = $('#txtSifre').val();
+
                 if (kullaniciAd === 'ai' && sifre === 'ai') {
                     window.location.href = 'https://os.is-a.dev/ai/2024/'; // Yönlendirme URL'si
-                } else {
-                    alert('Kullanıcı adı veya şifre hatalı!');
-                }
-                if (kullaniciAd === 'text' && sifre === 'text') {
-                    window.location.href = '#'; // Yönlendirme URL'si
+                } else if (kullaniciAd === 'text' && sifre === 'text') {
+                    window.location.href = '#'; // İkinci yönlendirme URL'si
                 } else {
                     alert('Kullanıcı adı veya şifre hatalı!');
                 }
             });
-        });       
+        });
     </script>
 </body>
 </html>
