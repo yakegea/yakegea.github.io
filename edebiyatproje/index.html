@@ -76,7 +76,6 @@
     </style>
 </head>
 <body>
-
     <div id="page1" class="page active">
         <img src="/edebiyatproje/1.png" alt="1. Sayfa Resmi">
     </div>
@@ -95,8 +94,6 @@
 
     <button id="prevBtn" class="nav-button" onclick="navigate(-1)">← Geri</button>
     <button id="nextBtn" class="nav-button" onclick="navigate(1)">İleri →</button>
-
-    <!-- Fullscreen Button -->
     <button id="fullscreenBtn" onclick="toggleFullscreen()"><i class="fas fa-expand"></i></button>
 
     <script>
@@ -147,7 +144,22 @@
                 document.exitFullscreen();
             }
         }
+    </script>
+    <script>
+    // Sayfa yüklendiğinde çalışacak kod
+window.onload = function() {
+    // Mevcut URL'yi al
+    var currentURL = window.location.href;
 
+    // Eğer URL ".html" ile bitiyorsa
+    if (currentURL.endsWith(".html")) {
+        // ".html" kısmını kaldır
+        var newURL = currentURL.slice(0, -5);
+
+        // Yeni URL'ye yönlendir
+        window.location.href = newURL;
+    }
+};
     </script>
 </body>
 </html>
