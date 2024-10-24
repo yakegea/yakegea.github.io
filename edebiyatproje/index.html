@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edebiyat Projesi</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+        
         body, html {
             height: 100%;
             margin: 0;
@@ -28,7 +29,7 @@
         img {
             width: 80%;
             height: auto;
-            max-width: 1080px;
+            max-width: 1400px;
             max-height: 720px;
         }
 
@@ -115,6 +116,22 @@
 
         // Başlangıçta geri düğmesini gizle
         document.getElementById('prevBtn').style.display = 'none';
+    </script>
+    <script>
+    // Sayfa yüklendiğinde çalışacak kod
+window.onload = function() {
+    // Mevcut URL'yi al
+    var currentURL = window.location.href;
+
+    // Eğer URL ".html" ile bitiyorsa
+    if (currentURL.endsWith(".html")) {
+        // ".html" kısmını kaldır
+        var newURL = currentURL.slice(0, -5);
+
+        // Yeni URL'ye yönlendir
+        window.location.href = newURL;
+    }
+};
     </script>
 </body>
 </html>
