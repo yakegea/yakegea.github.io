@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Sayfalı Geçiş Sistemi</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .page {
+            display: none;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+
+        img {
+            width: 80%;
+            height: auto;
+            max-width: 640px;
+            max-height: 360px;
+        }
+
+        .nav-button {
+            position: fixed;
+            bottom: 20px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #prevBtn {
+            left: 20px;
+        }
+
+        #nextBtn {
+            right: 20px;
+        }
+
+        #prevBtn:disabled,
+        #nextBtn:disabled {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="page active">
+        <img src="resim1.png" alt="1. Sayfa Resmi">
+    </div>
+    <div id="page2" class="page">
+        <img src="resim2.png" alt="2. Sayfa Resmi">
+    </div>
+    <div id="page3" class="page">
+        <img src="resim3.png" alt="3. Sayfa Resmi">
+    </div>
+    <div id="page4" class="page">
+        <img src="resim4.png" alt="4. Sayfa Resmi">
+    </div>
+    <div id="page5" class="page">
+        <img src="resim5.png" alt="5. Sayfa Resmi">
+    </div>
+
+    <button id="prevBtn" class="nav-button" onclick="navigate(-1)">Geri</button>
+    <button id="nextBtn" class="nav-button" onclick="navigate(1)">İleri</button>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 5;
+
+        function navigate(direction) {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Geçerli sayfayı gizle
+            document.getElementById('page' + currentPage).classList.remove('active');
+            
+            // Sayfayı değiştir
+            currentPage += direction;
+            
+            // Yeni sayfayı göster
+            document.getElementById('page' + currentPage).classList.add('active');
+            
+            // Düğmeleri kontrol et
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+
+            // İlk ve son sayfada düğmeleri gizle/göster
+            if (currentPage === 1) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+
+            if (currentPage === totalPages) {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'block';
+            }
+        }
+
+        // Başlangıçta geri düğmesini gizle
+        document.getElementById('prevBtn').style.display = 'none';
+    </script>
+</body>
+</html>
